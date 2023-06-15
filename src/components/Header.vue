@@ -2,37 +2,27 @@
 <VFSHeader />
 Copyright (c) 2022-2023. Kibble Game Studios Inc. All Rights Reserved.
 -->
-<script>
-    import Controller from '@/plugins/controller'
+<script setup>
 
     import { useInfoStore } from '@/stores/infoStore.js'
 
-    class HeaderController extends Controller {
+    const infosTore = useInfoStore();
 
-        constructor( name, subComponentList = []) {
-            super( name, subComponentList );
-            this.vm = {
-                subtitle: "VFS Programming for Games",
-            }
-            this.props = {
-                title: String
-            }
+    const subtitle = "PG24Pedro";
 
-            this.injectStore( useInfoStore );
-        }
-    }
+    const props = defineProps({
+        title:String
+    })
 
-    export default new HeaderController('VFSHeader');
 
 </script>
 <template>
 
-    <section class="container left">
-        <img alt="VFS Logo" class="logo" src="@/assets/vfs_logo.png" width="125" height="125" @click="$router.push('/')"/>
+    <section>
         <div class="title item">
             <h1>{{ infoStore.name }}</h1>
             <h4>{{ subtitle }} {{ infoStore.version }}</h4>
-            <button @click="infoStore.increment()">Add Version</button>
+
         </div>
         <slot class="item"></slot>
     </section>

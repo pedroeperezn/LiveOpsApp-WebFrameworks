@@ -2,8 +2,8 @@
 
 import { RouterLink, RouterView } from 'vue-router'
 
-import VFSHeader from '@/components/Header.vue'
-import VFSNavbar from '@/components/Navbar.vue'
+import Header from '@/components/Header.vue'
+import Navbar from '@/components/Navbar.vue'
 
 // todo import appInfoStore
 
@@ -11,8 +11,8 @@ import VFSNavbar from '@/components/Navbar.vue'
 <template>
 
     <header class="wrapper container columns">
-        <VFSHeader title="A sample app" />
-        <VFSNavbar />
+        <Header title="A sample app" />
+        <Navbar />
     </header>
     <main>
         <RouterView />
@@ -30,7 +30,7 @@ import VFSNavbar from '@/components/Navbar.vue'
         width: 100vw;
     }
 
-    /* VFSHeader {
+    /* Header {
         line-height: 1.5;
         max-height: 20vh;
     } */
